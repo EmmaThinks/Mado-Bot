@@ -61,7 +61,7 @@ const loadCommands = async () => {
 client.on("messageCreate", async (message: Message) => {
   if (message.author.bot) return;
   if (!message.content.toLowerCase().startsWith(preFix))
-    await handlePassiveInteractions(message);
+    return await handlePassiveInteractions(message);
 
   const args = message.content.slice(preFix.length).trim().split(/ +/);
   const commandName = args.shift()?.toLowerCase();
