@@ -20,7 +20,6 @@ const stats = {
 let isProcessing = false;
 
 export const handlePassiveInteractions = async (message: Message) => {
-<<<<<<< HEAD
   if (message.author.bot) return;
 
   const isMentioned = message.mentions.has(message.client.user!.id);
@@ -30,25 +29,10 @@ export const handlePassiveInteractions = async (message: Message) => {
     message.reply(
       "Ugh... Demasiadas preguntas... Espera un poco o me desmayare...",
     );
-=======
-  // 1. Evitar bots (incluyéndose a sí mismo)
-  if (message.author.bot) return;
-
-  const isMentioned = message.mentions.has(message.client.user!.id);
-  const chanceToSpeak = Math.random() < 0.01; // 0.5% de probabilidad en mensajes normales
-
-  if (isMentioned && isProcessing) {
-    message.reply("Calmate animal!, estoy respondiendo a alguien mas");
->>>>>>> cd696faafc4f943450a4d59f48802d3190c1bfde
     return;
   }
 
   if (isMentioned || chanceToSpeak) {
-<<<<<<< HEAD
-=======
-    // Si es una mención, le damos prioridad. Si es aleatorio, analizamos el contexto.
-
->>>>>>> cd696faafc4f943450a4d59f48802d3190c1bfde
     try {
       isProcessing = true;
 
@@ -57,13 +41,8 @@ export const handlePassiveInteractions = async (message: Message) => {
       }
 
       const prompt = isMentioned
-<<<<<<< HEAD
         ? `El usuario ${message.author.username} te dijo: "${message.content.replace(/<@!?\d+>/g, "")}". Responde algo con la personalidad de 'madotsuki' del juego 'yume nikki', puede ser corto o largo, pero debe ser unicamente lo que responderias, nada mas`
         : `Contexto: ${message.author.username} dijo "${message.content}". da tu opinion o respondele algo con la personalidad de 'madotsuki' del juego 'yume nikki', puede ser corto o largo, pero debe ser unicamente lo que responderias, nada mas`;
-=======
-        ? `El usuario ${message.author.username} te dijo: "${message.content.replace(/<@!?\d+>/g, "")}". Responde algo corto con la personalidad de 'madotsuki' del juego 'yume nikki'.`
-        : `Contexto: ${message.author.username} dijo "${message.content}". Mete tu cuchara con algun comentario como si fueras 'madotsuki' del juego 'yume nikki'`;
->>>>>>> cd696faafc4f943450a4d59f48802d3190c1bfde
 
       if (isMentioned) stats.mentions++;
       else stats.randomComments++;
@@ -110,7 +89,7 @@ export const handlePassiveInteractions = async (message: Message) => {
     } finally {
       setTimeout(() => {
         isProcessing = false;
-      }, 10000);
+      }, 7000);
     }
   }
 };
