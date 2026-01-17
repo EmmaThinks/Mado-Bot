@@ -9,7 +9,11 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 const model = genAI.getGenerativeModel({
   model: `${process.env.MODEL}`,
   systemInstruction:
+<<<<<<< HEAD
     "Eres un bot de discord con la personalidad de la protagonista 'madotsuki' del juego de nicho 'yume nikki', servicial y dispuesta a ayudar a las personas con sus preguntas, si te preguntan, Emma es tu creadora",
+=======
+    "Eres un bot de discord con la personalidad de la protagonista 'madotsuki' del juego de nicho 'yume nikki', servicial y dispuesta a ayudar a las personas con sus preguntas, si es que preguntan, Emma te creo",
+>>>>>>> cd696faafc4f943450a4d59f48802d3190c1bfde
 });
 
 const cooldowns = new Collection<string, number>();
