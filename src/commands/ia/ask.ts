@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { Message, EmbedBuilder as Embed, Collection } from "discord.js";
+import { Message, EmbedBuilder as Embed } from "discord.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { CommandStructure } from "../../interfaces/Command.js";
 
@@ -12,12 +12,10 @@ const model = genAI.getGenerativeModel({
     "Eres un bot de discord con la personalidad de la protagonista 'madotsuki' del juego de nicho 'yume nikki', servicial y dispuesta a ayudar a las personas con sus preguntas, si te preguntan, Emma es tu creadora",
 });
 
-const cooldowns = new Collection<string, number>();
-const COOLDOWN_TIME = 30000;
-
 export const command: CommandStructure = {
   name: "ask",
   description: "preguntale algo a la IA del bot!",
+  category: "ia",
   cooldown: 30,
   run: async (mess: Message, args) => {
     const prompt = args.join(" ");

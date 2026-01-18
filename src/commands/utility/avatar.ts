@@ -3,6 +3,7 @@ import type { CommandStructure } from "../../interfaces/Command.js";
 
 export const command: CommandStructure = {
   name: "avatar",
+  category: "utility",
   description: "Mira el Avatar de un usuario o de ti mism@",
   run: (mess: Message, args) => {
     try {
@@ -15,7 +16,8 @@ export const command: CommandStructure = {
 
       const mainEmbed = new embed()
         .setImage(avatarURL)
-        .setTitle(`avatar de ${targetUser.displayName}`);
+        .setTitle(`avatar de ${targetUser.displayName}`)
+        .setColor(0xff63a4);
 
       if ("reply" in mess) {
         mess.reply({ embeds: [mainEmbed] });

@@ -3,6 +3,7 @@ import type { CommandStructure } from "../../interfaces/Command.js";
 
 export const command: CommandStructure = {
   name: "banner",
+  category: "utility",
   description: "Mira el Banner de un usuario o de ti mism@",
   run: async (mess: Message, args) => {
     try {

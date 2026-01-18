@@ -3,6 +3,7 @@ import type { CommandStructure } from "../../interfaces/Command.js";
 
 export const command: CommandStructure = {
   name: "clear",
+  category: "mod",
   description:
     "borra tantos mensajes del chat como puedas! maximo de 100 mensajes en un solo comando",
   run: async (mess: Message, args) => {

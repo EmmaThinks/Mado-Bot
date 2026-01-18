@@ -3,6 +3,7 @@ import type { CommandStructure } from "../../interfaces/Command.js";
 
 export const command: CommandStructure = {
   name: "ban",
+  category: "mod",
   run: async (mess: Message, args) => {
     try {
       if (!mess.member?.permissions.has(PermissionsBitField.Flags.BanMembers)) {

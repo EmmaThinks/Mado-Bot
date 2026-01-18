@@ -2,6 +2,7 @@ import { Message, PermissionsBitField } from "discord.js";
 import type { CommandStructure } from "../../interfaces/Command.js";
 
 export const command: CommandStructure = {
+  category: "mod",
   name: "kick",
   run: async (mess: Message, args) => {
     try {

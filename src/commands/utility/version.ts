@@ -7,8 +7,8 @@ dotenv.config();
 
 export const command: CommandStructure = {
   name: "version",
-  aliases: ["v", "botinfo"],
   description: "Muestra la versión actual y estado del bot",
+  category: "utility",
   run: async (mess) => {
     const embed = new Embed()
       .setTitle("M.A.D.O")

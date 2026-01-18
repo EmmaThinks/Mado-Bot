@@ -51,7 +51,7 @@ export const handlePassiveInteractions = async (message: Message) => {
         `[Gemini Log] Intervención: ${isMentioned ? "Mención" : "Aleatoria"} | Usuario: ${message.author.username}`,
       );
       console.log(
-        `[Stats Totales] Menciones: ${stats.mentions} | Aleatorios: ${stats.randomComments} | Errores: ${stats.errors}`,
+        `[Stats Totales] Menciones: ${stats.mentions} | Aleatorios: ${stats.randomComments} | Errores: ${stats.errors} | Chance: ${chanceToSpeak}`,
       );
 
       const result = await model.generateContent(prompt);

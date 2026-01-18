@@ -8,6 +8,7 @@ import type { CommandStructure } from "../../interfaces/Command.js";
 export const command: CommandStructure = {
   //le damos el nombre a la estructura del comando
   name: "ping",
+  category: "utility",
   //establecemos la funcion que va a cumplir, en este caso, ping de la api y el bot
   run: async (mess: Message, args) => {
     // establecemos una constante donde le respondemos al usuario que estamos trabajando en el calculo

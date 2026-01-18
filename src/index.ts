@@ -17,6 +17,7 @@ const client = new Client({
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
   ],
 });
 
@@ -28,26 +29,26 @@ const preFix = "mado";
 
 const loadCommands = async () => {
   const foldersPath = path.join(__dirname, "commands");
-
   const commandFolders = fs.readdirSync(foldersPath);
 
   for (const folder of commandFolders) {
     const commandsPath = path.join(foldersPath, folder);
     const commandFiles = fs
       .readdirSync(commandsPath)
-      .filter((file) => file.endsWith(".js"));
+      .filter((file) => file.endsWith(".ts"));
 
     for (const file of commandFiles) {
       const filePath = path.join(commandsPath, file);
 
       try {
         const commandImport = await import(pathToFileURL(filePath).href);
-
         const command = commandImport.command;
 
         if (command && "name" in command && "run" in command) {
+          command.category = folder.toLowerCase();
+
           commands.set(command.name, command);
-          console.log(`Comando cargado: ${command.name}`);
+          console.log(`Comando cargado: ${command.name} [${folder}]`);
         } else {
           console.log(`${file} no tiene la estructura correcta.`);
         }
