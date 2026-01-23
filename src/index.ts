@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits, Collection, Message } from "discord.js";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";

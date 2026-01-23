@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { MemoryManager } from "./database.js";
 
 dotenv.config();

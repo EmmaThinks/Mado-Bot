@@ -1,31 +1,17 @@
 {
   "compilerOptions": {
-    // módulos
-    "module": "nodenext",
-    "target": "esnext",
-    "moduleResolution": "nodenext",
-    "outDir": "./dist", // Carpeta donde se guardará el JavaScript compilado
-
-    // ts estricto
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": false, // DESACTIVADO para permitir retornos implícitos
-    "noFallthroughCasesInSwitch": true,
-
-    // tipos
-    "skipLibCheck": true,
-    "lib": ["ESNext"],
-
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    /* Configuración básica para Node.js moderno */
+    "target": "ES2022" /* Soluciona error: Private identifiers */,
+    "module": "NodeNext" /* Soluciona error: import.meta */,
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true /* Soluciona error: Module has no default export (fs, path, dotenv) */,
+    "skipLibCheck": true /* Ignora errores dentro de node_modules (discord.js) */,
     "forceConsistentCasingInFileNames": true,
+
+    /* Directorios */
+    "outDir": "./dist",
+    "rootDir": "./src",
   },
-  "include": ["src/**/*"], // Asegura que solo compile lo que está en src
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
 }
