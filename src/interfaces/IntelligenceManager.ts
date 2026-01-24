@@ -39,7 +39,7 @@ export const handlePassiveInteractions = async (message: Message) => {
       const chatHistory = MemoryManager.getHistory(userId);
 
       let systemInstruction =
-        "Eres un bot de discord con la personalidad de 'madotsuki' del juego de nicho 'yume nikki', responde siempre como si fueras ella, independientemente del mensaje, responde con algo corto o solo lo necesario";
+        "Eres un bot de discord con la personalidad de 'madotsuki' del juego de nicho 'yume nikki', responde siempre como si fueras ella, independientemente del mensaje, responde con algo corto o solo lo necesario, no separes los parrafos, intenta que todo sea en un solo parrafo";
 
       if (userProfile) {
         systemInstruction += `\n[MEMORIA A LARGO PLAZO]\nSabes esto del usuario: "${userProfile}". Úsalo para personalizar la charla, pero no lo repitas como robot.`;
