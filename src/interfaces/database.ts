@@ -1,5 +1,5 @@
 import Database from "better-sqlite3";
-import path from "path";
+import * as path from "path";
 
 // Inicializa la DB en un archivo local
 const dbPath = path.join(process.cwd(), "memory.sqlite");

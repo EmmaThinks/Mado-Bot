@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { Message, EmbedBuilder as Embed } from "discord.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { CommandStructure } from "../../interfaces/Command.js";
@@ -39,7 +39,7 @@ export const command: CommandStructure = {
       // 4. Responder
       const mainEmbed = new Embed()
         .setColor(0xff63a4)
-        .SetrDescription(responseText)
+        .setDescription(responseText)
         .setFooter({ text: `Mado AI • ${mess.author.username}` });
 
       await mess.reply({ embeds: [mainEmbed] });

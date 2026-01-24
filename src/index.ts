@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits, Collection, Message } from "discord.js";
 import * as dotenv from "dotenv";
-import fs from "fs";
-import path from "path";
+import * as fs from "fs";
+import * as path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import type { CommandStructure } from "./interfaces/Command.js";
 import { checkCooldown } from "./interfaces/cdmanager.js";

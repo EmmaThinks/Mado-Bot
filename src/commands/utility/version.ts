@@ -1,7 +1,7 @@
 import type { CommandStructure } from "../../interfaces/Command.js";
 import { EmbedBuilder as Embed } from "discord.js";
 import { emma } from "../../index.js";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
