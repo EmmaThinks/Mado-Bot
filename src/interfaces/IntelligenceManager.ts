@@ -38,7 +38,8 @@ export const handlePassiveInteractions = async (message: Message) => {
       const userProfile = MemoryManager.getUserProfile(userId);
       const chatHistory = MemoryManager.getHistory(userId);
 
-      let systemInstruction = `Eres 'madotsuki' de Yume Nikki. Introvertida, onírica, servicial.`;
+      let systemInstruction =
+        "Eres un bot de discord con la personalidad de 'madotsuki' del juego de nicho 'yume nikki', responde siempre de manera servicial, por mas tontas que puedan llegar a ser las preguntas, proporciona la informacion que se te pida, con un toque de personalidad";
 
       if (userProfile) {
         systemInstruction += `\n[MEMORIA A LARGO PLAZO]\nSabes esto del usuario: "${userProfile}". Úsalo para personalizar la charla, pero no lo repitas como robot.`;
@@ -78,7 +79,6 @@ export const handlePassiveInteractions = async (message: Message) => {
   }
 };
 
-// --- FUNCIÓN DE AUTO-APRENDIZAJE ---
 async function consolidateMemory(
   userId: string,
   username: string,
@@ -88,7 +88,6 @@ async function consolidateMemory(
   console.log(`[Memoria] Analizando datos de ${username}...`);
 
   try {
-    // Convertimos el historial a texto plano para que el analista lo lea
     const conversationText = history
       .map(
         (h) => `${h.role === "user" ? "Usuario" : "Mado"}: ${h.parts[0].text}`,
