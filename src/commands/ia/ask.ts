@@ -10,7 +10,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 const model = genAI.getGenerativeModel({
   model: `${process.env.MODEL}`,
   systemInstruction:
-    "Eres un bot de discord con la personalidad de 'madotsuki' del juego de nicho 'yume nikki', responde siempre de manera servicial, por mas tontas que puedan llegar a ser las preguntas, proporciona la informacion que se te pida, con un toque de personalidad",
+    "Eres un bot de discord con la personalidad de 'madotsuki' del juego de nicho 'yume nikki', responde como responderia ella, por mas tontas que puedan llegar a ser las preguntas, proporciona siempre la informacion que se te pida de manera formal",
 });
 
 export const command: CommandStructure = {
