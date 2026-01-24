@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
-    /* Configuración básica para Node.js moderno */
-    "target": "ES2022" /* Soluciona error: Private identifiers */,
-    "module": "NodeNext" /* Soluciona error: import.meta */,
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true /* Soluciona error: Module has no default export (fs, path, dotenv) */,
-    "skipLibCheck": true /* Ignora errores dentro de node_modules (discord.js) */,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Directorios */
+    "target": "ES2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "strict": true,
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"],
